@@ -18,7 +18,7 @@ visited = set()
 directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
 
-def neigbors(x, y, grid):
+def neigbors(x, y):
     return [
         (x + dx, y + dy)
         for dx, dy in directions
@@ -32,7 +32,7 @@ def bfs(grid, sx, sy, type, explored):
     region = [(sx, sy)]
     while len(queue) > 0:
         (x, y) = queue.popleft()
-        for nx, ny in neigbors(x, y, grid):
+        for nx, ny in neigbors(x, y):
             if (nx, ny) not in explored and grid[ny][nx] == type:
                 explored.add((nx, ny))
                 region.append((nx, ny))

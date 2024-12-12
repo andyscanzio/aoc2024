@@ -2,17 +2,18 @@ from itertools import product
 from tqdm import tqdm
 import re
 
-    
-with open('input.txt') as file:
+
+with open("input.txt") as file:
     input = [
         [int(x) for x in re.findall(r"\d+", line)]
-        for line in  file.read().strip().splitlines()
+        for line in file.read().strip().splitlines()
     ]
 calc = {
-    '+': lambda a, b: a + b,
-    '*': lambda a, b: a * b,
-    '.': lambda a, b: int(f"{a}{b}"),
+    "+": lambda a, b: a + b,
+    "*": lambda a, b: a * b,
+    ".": lambda a, b: int(f"{a}{b}"),
 }
+
 
 def solve(symbols):
     sum = 0
@@ -31,4 +32,4 @@ def solve(symbols):
     return sum
 
 
-print(solve('+*.'))
+print(solve("+*."))

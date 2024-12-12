@@ -1,12 +1,12 @@
 from pathlib import Path
 
-folder = Path(__file__).parent 
-test = folder / 'test.txt'
-input = folder / 'input.txt'
+folder = Path(__file__).parent
+test = folder / "test.txt"
+input = folder / "input.txt"
 
-with open(input, 'r') as file:
+with open(input, "r") as file:
     data = file.read()
-    
+
 disk = []
 id = 0
 for i, size in enumerate(data):
