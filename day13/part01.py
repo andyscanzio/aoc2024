@@ -37,13 +37,14 @@ def credits(machine: str) -> int:
     (ax, ay), (bx, by), (px, py) = parse(machine)
     det = ax * by - ay * bx
 
-    ka, r = ((px * by - py * bx) / det).as_integer_ratio()
-    if r != 1:
+    ka = (px * by - py * bx) / det
+    if not ka.is_integer():
         return 0
-    kb, r = ((py * ax - px * ay) / det).as_integer_ratio()
-    if r != 1:
+
+    kb = (py * ax - px * ay) / det
+    if not kb.is_integer():
         return 0
-    return 3 * ka + kb
+    return int(3 * ka + kb)
 
 
 machines = [credits(machine) for machine in data.split("\n\n")]
