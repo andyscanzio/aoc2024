@@ -1,5 +1,4 @@
 from pathlib import Path
-from pprint import pprint
 
 
 folder = Path(__file__).parent
